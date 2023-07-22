@@ -1,18 +1,25 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-wake-on-lan';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
+import { awake } from 'react-native-wake-on-lan';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [macAddress, setMacAddress] = React.useState('74:56:3C:37:6F:02');
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const onPress = () => {
+    awake(macAddress, 9);
+  };
+
+  const onChangeText = (v: string) => setMacAddress(v);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <TextInput
+        placeholder="Type mac address"
+        value={macAddress}
+        onChangeText={onChangeText}
+      />
+      <Button onPress={onPress} title="Awake" />
     </View>
   );
 }

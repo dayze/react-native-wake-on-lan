@@ -17,6 +17,6 @@ const WakeOnLan = NativeModules.WakeOnLan
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return WakeOnLan.multiply(a, b);
+export function awake(macAddress: string, port: number): Promise<void> {
+  return WakeOnLan.awake(macAddress, port);
 }

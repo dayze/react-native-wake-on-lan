@@ -1,7 +1,5 @@
 # react-native-wake-on-lan
 
- 
-
 ## Installation
 
 ```sh
@@ -11,11 +9,11 @@ npm install react-native-wake-on-lan
 ## Usage
 
 ```js
-import { multiply } from 'react-native-wake-on-lan';
+import { awake } from 'react-native-wake-on-lan';
 
 // ...
 
-const result = await multiply(3, 7);
+await awake('74:42:3C:24:36:02', 7);
 ```
 
 ## Contributing
@@ -29,3 +27,4 @@ MIT
 ---
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Based on [jesper-lindberg/Awake](https://github.com/jesper-lindberg/Awake)
