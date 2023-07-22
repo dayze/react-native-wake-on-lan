@@ -1,6 +1,6 @@
 {
   "name": "react-native-wake-on-lan",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A React Native module to send Wake On Lan magic packets",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
